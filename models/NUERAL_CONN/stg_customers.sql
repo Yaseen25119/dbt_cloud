@@ -1,6 +1,7 @@
 {{ config(
     materialized='view',
-    schema='NUERAL_CONN'
+    schema=env_var('NUERAL_SCHEMA', 'NUERAL_CONN'),
+    database=env_var('DB_NAME', 'JARVIS_MIND')
 ) }}
 
 SELECT

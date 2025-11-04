@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: sales_raw
+    database: "{{ env_var('RAW_DB', 'SALES_DB') }}"
+    schema: "RAW"
+    tables:
+      - name: customers
+      - name: orders
+
+models:
+  - name: customers
+    description: "Materialized table from SALES_DB.RAW.CUSTOMERS"
+  - name: orders
+    description: "Materialized table from SALES_DB.RAW.ORDERS"
+  - name: stg_customers
+    description: "View built on top of CORE_CONN.CUSTOMERS"
+  - name: stg_orders
+    description: "View built on top of CORE_CONN.ORDERS"
