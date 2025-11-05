@@ -1,7 +1,7 @@
 {{ config(
     materialized='table',
-    schema=env_var('FINAL_SCHEMA'),
-    database=env_var('FINAL_DB')
+    schema=env_var('FINAL_SCHEMA','SCH_MART'),
+    database=env_var('FINAL_DB','DB_DEV_ITDM_01')
 ) }}
 
 SELECT
